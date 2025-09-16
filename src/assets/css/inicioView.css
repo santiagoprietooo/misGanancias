@@ -1,0 +1,172 @@
+.ganancia-contenedor {
+    padding: 1rem;
+}
+
+.ganancia-contenedor > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    border: 1.5px solid rgb(150, 150, 150);
+    border-radius: 1rem;
+}
+
+.ganancia-total {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.ganancia-total h2 {
+    color: rgb(215, 215, 215);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.ganancia-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: .5rem;
+}
+
+.ganancia-botones button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    background-color: rgb(215, 215, 215);
+    border: 1.5px solid rgb(150, 150, 150);
+    border-radius: 10000px;
+}
+.ganancia-botones button svg {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+/* Movimientos */
+.movimientos-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 4rem !important;
+}
+
+.movimientos-historial-vacio p {
+    color: rgb(100, 100, 100);
+    font-size: .9rem;
+}
+
+.movimientos-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    list-style: none;
+}
+
+.movimientos-lista li {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+}
+
+.movimientos-lista-encabezado {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.movimientos-lista-titulo {
+    font-weight: 550;
+}
+
+.movimiento-lista-btn-abrir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .250rem;
+    background-color: transparent;
+    border: 0;
+    border-radius: 10000px;
+}
+.movimiento-lista-btn-abrir svg {
+    height: 1rem;
+    width: 1rem;
+}
+
+.movimiento-lista-btn-abrir-abierto {
+    background-color: rgba(255, 255, 255, 0.30);
+    color: white !important;
+}
+
+.movimiento-lista-opciones {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: max-content;
+    background-color: green;
+    border-radius: .450rem 0 .450rem .450rem;
+}
+
+.movimiento-lista-opciones-gasto, .movimiento-lista-opciones-gasto button {
+    background-color: red !important;
+}
+
+.movimiento-lista-btn-borrar {
+    padding: .5rem;
+    width: max-content !important;
+    background-color: green;
+    color: white;
+    font-weight: 500;
+    border: 0;
+    border-radius: .450rem 0 .450rem .450rem;
+}
+
+.movimientos-lista-fecha {
+    font-size: .850rem;
+}
+
+.movimientos-lista-monto {
+    place-self: end;
+    font-size: .950rem;
+    font-weight: 400 !important;
+    margin-top: 1rem;
+}
+
+.movimiento-tipo-ganancia {
+    background-color: rgb(0, 42, 0) !important;
+    color: yellowgreen;
+    border-color: rgb(0, 80, 0) !important;
+}
+.movimiento-tipo-ganancia span:has(h3) button:has(svg) {
+    color: yellowgreen;
+}
+
+.fondo-blureado-ganancia {
+    background-color: rgba(0, 42, 0, 0.500) !important;
+    border-color: rgba(0, 80, 0, 0.500) !important;
+}
+
+.movimiento-tipo-gasto {
+    background-color: rgb(35, 0, 0) !important;
+    color: red;
+    border-color: rgb(150, 0, 0) !important;
+}
+.movimiento-tipo-gasto span:has(h3) button:has(svg) {
+    color: red;
+}
+
+.fondo-blureado-gasto {
+    background-color: rgba(45, 0, 0, 0.675) !important;
+}

@@ -1,0 +1,37 @@
+.navbar {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    background-color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0.100);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.navbar, .navbar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: .8rem 0;
+    width: 50%;
+    list-style-type: none;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(60, 60, 60);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.navbar-link-active {
+    font-weight: 700;
+}

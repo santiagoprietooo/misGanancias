@@ -1,0 +1,166 @@
+.no-produccion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.no-produccion p {
+    color: rgb(100, 100, 100);
+    font-size: .9rem;
+}
+
+.agregar-produccion {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.agregar-produccion form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.agregar-produccion form label {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.agregar-produccion form input {
+    padding: .3rem;
+    font-size: 1rem;
+    border: 1.5px solid rgb(200, 200, 200);
+    border-radius: .5rem;
+}
+.agregar-produccion form input::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.agregar-produccion-input-error {
+    background-color: rgba(255, 0, 0, 0.05) !important;
+    border-color: red !important;
+}
+
+.agregar-borrar-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .2rem;
+}
+
+.nombre-input {
+    width: 100%;
+}
+
+.gusto-input {
+    width: 100%;
+}
+
+.agregar-borrar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    min-width: 32px;
+    background-color: rgb(215, 215, 215);
+    border: 1.5px solid rgb(150, 150, 150);
+    border-radius: .5rem;
+}
+
+.unidad-ingrediente-contenedor {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+.unidad-ingrediente-contenedor input[type="text"] {
+    width: 100%;
+}
+
+.unidad-input {
+    width: 36px;
+}
+
+.agregar-produccion form button[type="submit"]:disabled {
+    background-color: rgba(30, 30, 30, 0.600);
+    color: rgba(240, 240, 240, 0.750);
+    border-color: rgba(150, 150, 150, 0.750);
+}
+
+.produccion-detalles {
+    padding-bottom: 4rem;
+}
+
+.produccion-detalles h2 {
+    padding: 1rem;
+    width: 100%;
+    background-color: rgb(60, 60, 60);
+    color: white;
+}
+
+.produccion-detalles div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+}
+
+.produccion-detalles ul {
+    list-style: none;
+}
+
+.produccion-detalles-btn {
+    place-self: end;
+    margin-top: 1rem;
+    width: max-content;
+    padding: .5rem;
+    background-color: rgb(60, 60, 60);
+    color: rgb(240, 240, 240);
+    font-size: .8rem;
+    font-weight: 500;
+    border: 1.5px solid rgb(150, 150, 150);
+    border-radius: .5rem;
+}
+
+.agregar-produccion header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.agregar-produccion header button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: rgb(100, 100, 100);
+    font-weight: 500;
+    border: 0;
+}
+
+.btn-contenedor {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.btn-contenedor button {
+    margin-top: 1rem !important;
+}
+
+.produccion-borrar-btn {
+    padding: .5rem;
+    width: max-content;
+    background-color: rgb(35, 0, 0) !important;
+    color: red;
+    font-size: .8rem;
+    font-weight: 500;
+    border: 1.5px solid rgb(150, 0, 0);
+    border-radius: .5rem;
+}
