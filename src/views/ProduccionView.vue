@@ -19,6 +19,7 @@ const nuevaProduccion = ref({
         unidades: 1
     }]
 });
+const editandoProduccion = ref(null);
 
 function crearProduccion() {
     produccion.value.agregarNombre(nuevaProduccion.value.nombre);
@@ -35,8 +36,15 @@ function crearProduccion() {
     abrirCrear.value = false;
 }
 
+function abrirEdicion() {
+    editandoProduccion.value = JSON.parse(localStorage.getItem('misGanancias - Producción'));
+    abrirEditar.value = true;
+}
+
 function editarProduccion() {
-    localStorage.setItem('misGanancias - Producción', JSON.stringify(produccion.value));
+    localStorage.setItem('misGanancias - Producción', JSON.stringify(editandoProduccion.value));
+
+    produccion.value = JSON.parse(localStorage.getItem('misGanancias - Producción'));
     abrirEditar.value = false;
 }
 
@@ -172,12 +180,12 @@ function borrarProduccion() {
                         id="nombre"
                         type="text"
                         class="nombre-input"
-                        v-model.trim="produccion.nombre"
+                        v-model.trim="editandoProduccion.nombre"
                         autocomplete="off"
                     />
                 </div>
 
-                <div v-for="(gusto, index) in produccion.gustos" :key="index">
+                <div v-for="(gusto, index) in editandoProduccion.gustos" :key="index">
                     <label :for="`gusto-${index}`">
                         Editar gusto
                     </label>
@@ -188,21 +196,21 @@ function borrarProduccion() {
                             :id="`gusto-${index}`"
                             type="text"
                             class="gusto-input"
-                            v-model.trim="produccion.gustos[index]"
+                            v-model.trim="editandoProduccion.gustos[index]"
                             autocomplete="off"
                         />
 
                         <button
                             v-if="index > 0"
                             type="button"
-                            @click="produccion.gustos.splice(index, 1)"
+                            @click="editandoProduccion.gustos.splice(index, 1)"
                             class="agregar-borrar-btn"
                         >
                             -
                         </button>
                         <button
                             type="button"
-                            @click="produccion.gustos.push('')"
+                            @click="editandoProduccion.gustos.push('')"
                             class="agregar-borrar-btn"
                         >
                             +
@@ -210,7 +218,7 @@ function borrarProduccion() {
                     </div>
                 </div>
 
-                <div v-for="(ingrediente, index) in produccion.ingredientes" :key="index">
+                <div v-for="(ingrediente, index) in editandoProduccion.ingredientes" :key="index">
                     <label :for="`ingrediente-${index}`">
                         Editar ingrediente
                     </label>
@@ -237,14 +245,14 @@ function borrarProduccion() {
                             <button
                                 v-if="index > 0"
                                 type="button"
-                                @click="produccion.ingredientes.splice(index, 1)"
+                                @click="editandoProduccion.ingredientes.splice(index, 1)"
                                 class="agregar-borrar-btn"
                             >
                                 -
                             </button>
                             <button
                                 type="button"
-                                @click="produccion.ingredientes.push({ nombre: '', unidades: 1 })"
+                                @click="editandoProduccion.ingredientes.push({ nombre: '', unidades: 1 })"
                                 class="agregar-borrar-btn"
                             >
                                 +
@@ -253,7 +261,7 @@ function borrarProduccion() {
                     </div>
                 </div>
 
-                <button type="submit" class="produccion-detalles-btn" :disabled="!produccion.nombre">Guardar</button>
+                <button type="submit" class="produccion-detalles-btn" :disabled="!editandoProduccion.nombre">Guardar</button>
             </form>
         </section>
     </template>
@@ -270,7 +278,7 @@ function borrarProduccion() {
         <article v-else class="produccion-detalles">
             <h2>{{ produccion.nombre }}</h2>
 
-            <div>
+            <div v-if="!produccion.gustos.includes('')">
                 <h3>Gustos</h3>
 
                 <ul>
@@ -280,7 +288,7 @@ function borrarProduccion() {
                 </ul>
             </div>
 
-            <div>
+            <div v-if="!produccion.ingredientes.find((i) => i.nombre === '')">
                 <h3>Ingredientes</h3>
 
                 <ul>
@@ -291,7 +299,7 @@ function borrarProduccion() {
             </div>
 
             <div class="btn-contenedor">
-                <button type="button" @click="abrirEditar = true" class="produccion-detalles-btn">
+                <button type="button" @click="abrirEdicion()" class="produccion-detalles-btn">
                     Editar producción
                 </button>
 
